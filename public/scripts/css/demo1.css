@@ -1,0 +1,29 @@
+#lottery {
+    width: 574px;
+    height: 584px;
+    margin: 20px auto 0;
+    background: url('../images/bg.jpg') no-repeat;
+    padding: 50px 55px;
+}
+
+#lottery table td {
+    width: 142px;
+    height: 142px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 24px;
+    color: #333;
+    font-index: -999
+}
+
+#lottery table td a {
+    width: 284px;
+    height: 284px;
+    line-height: 150px;
+    display: block;
+    text-decoration: none;
+}
+
+#lottery table td.active {
+    background-color: #ea0000;
+}

@@ -1,0 +1,12 @@
+
+#将所有的的请求都重定向到public目录下
+
+RewriteEngine on
+
+
+RewriteCond %{HTTP_HOST} ^(.*)?$
+RewriteRule ^(.*)$ public/index.php [PT,L]
+
+##public下面的所有除了index.php文件外的文件
+#RewriteCond %{HTTP_HOST}  !^(.*)?/(.*)$ [OR]
+#RewriteRule ^(.*)$ public/$1 [PT,L]

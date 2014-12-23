@@ -1,0 +1,14 @@
+
+#将所有的数据请求都再重定向到public下的index.php文件
+# 1 可以使程序有一个单一的入口，将所有除静态程序以外的程序都重定向到index.php上；
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+#将所有其他URL重写到 indexs.php/URL
+RewriteRule ^(.*)$ $1 [PT,L]
+
+
+
