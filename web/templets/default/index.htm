@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<link rel="shortcut icon" href="/favicon.ico" /></link>
+<link href="/dedemao/css/index.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/dedemao/style/Vizo-style.css" media="all" />
+<script type="text/javascript" src="/dedemao/script/jquery-1.6.2.min.js">
+</script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){					   
+$(".item1").hover(function(){$("#tit_fc1").slideDown("normal");	}, function() {$("#tit_fc1").slideUp("fast");});				
+$(".item2").hover(function(){$("#tit_fc2").slideDown("normal");	}, function() {$("#tit_fc2").slideUp("fast");});
+$(".item3").hover(function(){$("#tit_fc3").slideDown("normal");	}, function() {$("#tit_fc3").slideUp("fast");});
+$(".item4").hover(function(){$("#tit_fc4").slideDown("normal");	}, function() {$("#tit_fc4").slideUp("fast");});
+});			   
+var currentindex=1;
+$("#flashBg").css("background-color",$("#flash1").attr("name"));
+function changeflash(i) {	
+currentindex=i;
+for (j=1;j<=5;j++){//此处的5代表你想要添加的幻灯片的数量与下面的5相呼应
+	if (j==i) 
+	{$("#flash"+j).fadeIn("normal");
+	$("#flash"+j).css("display","block");
+	$("#f"+j).removeClass();
+	$("#f"+j).addClass("dq");
+	$("#flashBg").css("background-color",$("#flash"+j).attr("name"));
+	}
+	else
+	{$("#flash"+j).css("display","none");
+	$("#f"+j).removeClass();
+	$("#f"+j).addClass("no");}
+}}
+function startAm(){
+timerID = setInterval("timer_tick()",8000);//8000代表间隔时间设置
+}
+function stopAm(){
+clearInterval(timerID);
+}
+function timer_tick() {
+    currentindex=currentindex>=5?1:currentindex+1;//此处的5代表幻灯片循环遍历的次数
+	changeflash(currentindex);}
+$(document).ready(function(){
+$(".flash_bar div").mouseover(function(){stopAm();}).mouseout(function(){startAm();});
+startAm();
+});
+
+ //]]>
+</script>
+
+</head>
+<body>
+<!--头部 开始-->
+{dede:include filename="head.htm"/}
+<!--头部 结束-->
+<!--banner 开始-->
+<div id="banner">
+<div id="Slidebox" style="background-color:{dede:arclist flag='f' row='1' orderby='pubdate' typeid='13'}[field:color/]{/dede:arclist}"> 
+
+  <div id="flashBg">
+    <div id="flashLine">
+      <div id="flash">
+      {dede:arclist flag='f' row='5' orderby='pubdate' typeid='13'}
+      <a name="[field:color/]" style="display:block;" id="flash[field:global.autoindex/]" target="_blank" href="[field:arcurl/]" ><img src="[field:litpic/]" width="1000" height="388" /></a>
+            
+      {/dede:arclist}
+      
+        <div class="flash_bar">
+          <div class="dq"  id="f1" onclick="changeflash(1)"></div>
+          <div class="no"  id="f2" onclick="changeflash(2)"></div>
+          <div class="no"  id="f3" onclick="changeflash(3)"></div>
+          <div class="no"  id="f4" onclick="changeflash(4)"></div>
+          <div class="no"  id="f5" onclick="changeflash(5)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+</div>
+<!--banner 结束-->
+<!--内容区 开始-->
+<div id="content">
+  <div class="title"><img src="/dedemao/images/work_tit.gif" /></div>
+  <div class="zxcp">
+    <ul class="zxcp1">
+    {dede:arclist row=4 titlelen=32 noflag='h' typeid='1'}
+<li><a href='[field:arcurl/]' title='[field:title/]' target='_blank'><img src='[field:litpic/]' width="215px" height="140px" alt='[field:title/]' border='0' /></a></li>
+    
+    {/dede:arclist}
+    </ul>
+  </div>
+  <div class="about">
+    <div class="js">某某工作室成立于2010年10月，一直专注于互联网品牌建
+      设我们团队的成员曾务于国内优秀广告公司及互联网公司，
+      业务类型涉及网页视觉、交互设计移动终端用户体验，及电
+      子消费类产品等。
+</div>
+    <div class="fw"><span class="fwtit"><img src="/dedemao/images/about_22.gif" /></span>
+      <ul class="fw1">
+        <li class="web"><a href="/service" ><img src="/dedemao/images/fwan.gif" border="0"/></a></li>
+        <li class="app"><a href="/service" ><img src="/dedemao/images/fwan.gif" border="0"/></a></li>
+        <li class="flash"><a href="/service"><img src="/dedemao/images/fwan.gif" border="0"/></a></li>
+        <li class="wb"><a href="/service"><img src="/dedemao/images/fwan.gif" border="0"/></a></li>
+      </ul>
+	  <span><img src="/dedemao/images/webzt.gif" /></span>
+    </div>
+  </div>
+  <div class="news"><span class="lb"><img src="/dedemao/images/new_03.gif" /></span>
+    <ul>
+    {dede:arclist row=2 titlelen=32 noflag='h' typeid='4'}
+	  <li><a href='[field:arcurl/]' target='_blank'><span class='tp'><img src='[field:litpic/]' width="80px" height="60px" alt='[field:title/]' /></span><span class='tit'>[field:title/]</span><span class='nr1'>[field:description  function="cn_substr(@me,98)"/]</span></a></li>    
+    {/dede:arclist}     
+    </ul>
+    <div class="more"><a href="/news" ><img src="/dedemao/images/jia1.gif" border="0" /></a></div>
+  </div>
+  
+</div>
+<!--内容区 结束-->
+<!--底部 开始-->
+{dede:include filename="footer.htm"/}
+
+<div id="footer1">
+  <div class="link">友情链接 : 
+{dede:flink linktype = '2' row='100'/}  <a href="http://www.dedemao.com/">织梦模板</a></div>
+</div>
+<!--底部 结束-->
+</body>
+</html>

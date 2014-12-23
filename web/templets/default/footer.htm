@@ -1,0 +1,70 @@
+
+<script language="javascript">
+function checknull(){
+		if(document.getElementById("nameundis").value == "" || document.getElementById("nameundis").value=="您的姓名")
+		{ 
+			alert("姓名不能为空!");
+			document.form1.nameundis.focus();
+			return false;
+		}
+		var Letters = "0123456789";     
+		for (i=0;i< document.getElementById("phundis").value.length;i++){     
+			 var CheckChar = document.getElementById("phundis").value.charAt(i);     
+			 if(Letters.indexOf(CheckChar) == -1){     
+			   alert("电话号码必须为数字！");     
+			   document.form1.phundis.focus();     
+			   return false;     
+			 }     
+		 }
+		if(document.getElementById("texttextfs").value == "" || document.getElementById("texttextfs").value=="您的需求")
+		{ 
+			alert("您没有什么需求要说么？");
+			document.form1.texttextfs.focus();
+			return false;
+		}		 
+		 return true;
+}
+</script>
+<div id="footer">
+  <div class="dibu">
+    <div class="con">
+      <div><img src="/dedemao/images/footer_03.gif" /></div>
+      <span class="con_1">您可以通过以下方式联系我们，或在页面右侧给我们留言</span>
+      <div class="weibo">
+        <ul>
+          <li class="qq"><a href="http://wpa.qq.com/msgrd?V=1&;Uin={dede:global.dedemao_qq/}&Site=qq交流&Menu=yes"><img src="/dedemao/images/weibo.gif" border="0" /></a></li>
+          <li class="xl"><a href="{dede:global.dedemao_sina/}" target="_blank"><img src="/dedemao/images/weibo.gif" border="0" /></a></li>
+          <li class="tx"><a href="{dede:global.dedemao_tencent/}" target="_blank"><img src="/dedemao/images/weibo.gif" border="0" /></a></li>
+        </ul>
+      </div>
+      <div class="dh"><img src="/dedemao/images/dh.gif" /></div>
+      <div class="gzsj">{dede:global.dedemao_contact/}</div>
+    </div>
+    <div class="ly">
+<form action="/plus/diy.php" enctype="multipart/form-data" method="post" onsubmit="return checknull();" name="form1" >
+<input type="hidden" name="action" value="post" />
+<input type="hidden" name="diyid" value="1" />
+<input type="hidden" name="do" value="2" />
+    
+      <input id="phundis" class="" name="phone" value="您的电话" onblur="if(this.value==''){this.value='您的电话';};" onfocus="javascript:if(this.value == '您的电话') this.value = '';" type="text" />
+      <input id="nameundis" name="name" class="" type="text" value="您的姓名"  onblur="if(this.value==''){this.value='您的姓名';};" onfocus="javascript:if(this.value == '您的姓名') this.value = '';"/>
+      <input id="mailundis" name="mail" class="" type="text" value="您的邮箱"  onblur="if(this.value==''){this.value='您的邮箱';};" onfocus="javascript:if(this.value == '您的邮箱') this.value = '';" />
+      <textarea name="xuqiu" id="texttextfs" class="texttextfs" onblur="if(this.value==''){this.value='您的需求';};" onfocus="javascript:if(this.value == '您的需求') this.value = '';">您的需求</textarea>
+      <div class="tj"><span class="tjan"><a href="#">
+       <input type="hidden" id="checkson" name="checkson" value="1" />
+        <label>
+        <input type="image" name="imageField" src="/dedemao/images/tjan.gif" id="imageField" />
+        </label>
+      </a></span> </div>
+<input type="hidden" name="dede_fields" value="name,text;phone,text;mail,text;xuqiu,multitext" />
+<input type="hidden" name="dede_fieldshash" value="83fcda4a1a283ca353ccaabf2401066b" />      
+    </form>
+    </div>
+    <span class="h40px"></span>
+    <div class="menu"><span class="bqsy">{dede:global.cfg_powerby/} {dede:global.cfg_beian/}</span><a href="/">首页</a>　　
+      	{dede:channel type='top' row='10'}
+      	<a href='[field:typeurl/]' [field:rel/]><span>[field:typename/]</span></a>　　
+      	{/dede:channel}　
+　　</div>
+  </div>
+</div>

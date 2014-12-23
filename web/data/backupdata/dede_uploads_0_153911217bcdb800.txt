@@ -1,0 +1,6 @@
+INSERT INTO `dede_uploads` VALUES('1','73','Ñ°Î¶äìÏæ','/uploads/allimg/140124/1403032418-0.jpg','1','1000','254','0','134576','1390543384','1');
+INSERT INTO `dede_uploads` VALUES('2','73','Ñ°Î¶äìÏæ','/uploads/allimg/140124/1403035K0-1.jpg','1','1000','219','0','180956','1390543385','1');
+INSERT INTO `dede_uploads` VALUES('3','73','Ñ°Î¶äìÏæ','/uploads/allimg/140124/1403033Y6-2.jpg','1','1000','463','0','153264','1390543386','1');
+INSERT INTO `dede_uploads` VALUES('4','73','Ñ°Î¶äìÏæ','/uploads/allimg/140124/1403034195-3.jpg','1','1000','393','0','135370','1390543386','1');
+INSERT INTO `dede_uploads` VALUES('5','73','Ñ°Î¶äìÏæ','/uploads/allimg/140124/1403033325-4.jpg','1','1000','439','0','140936','1390543387','1');
+INSERT INTO `dede_uploads` VALUES('6','73','Ñ°Î¶äìÏæ','/uploads/allimg/140124/1403035J3-5.jpg','1','1000','522','0','174599','1390543388','1');
