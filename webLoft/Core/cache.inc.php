@@ -1,11 +1,12 @@
 <?php
 
 class Cache {
+
     /**
-     * $dir : 缓存文件存放目录
-     * $lifetime : 缓存文件有效期,单位为秒
-     * $cacheid : 缓存文件路径,包含文件名
-     * $ext : 缓存文件扩展名(可以不用),这里使用是为了查看文件方便
+     * $dir
+     * $lifetime
+     * $cacheid
+     * $ext
      */
     private $dir;
     private $lifetime;
@@ -13,7 +14,7 @@ class Cache {
     private $ext;
 
     /**
-     * 析构函数,检查缓存目录是否有效,默认赋值
+     * 检查缓存目录是否有效,默认赋值
      */
     function __construct($dir='',$lifetime=1800) {
         if ($this->dir_isvalid($dir)) {
@@ -23,6 +24,7 @@ class Cache {
             $this->cacheid = $this->getcacheid();
         }
     }
+
     /**
      * 检查缓存是否有效
      */
@@ -32,6 +34,7 @@ class Cache {
         if (mktime(time()) - $mtime > $this->lifetime) return false;
         return true;
     }
+
     /**
      * 写入缓存
      * $mode == 0 , 以浏览器缓存的方式取得页面内容
@@ -54,6 +57,7 @@ class Cache {
             $this->error('写入缓存失败!请检查目录权限!');
         }
     }
+
     /**
      * 加载缓存
      * exit() 载入缓存后终止原页面程序的执行,缓存无效则运行原页面程序生成缓存
@@ -71,6 +75,7 @@ class Cache {
             ob_start();
         }
     }
+
     /**
      * 清除缓存
      */
@@ -82,12 +87,14 @@ class Cache {
             $this->error('清除缓存文件失败!请检查目录权限!');
         }
     }
+
     /**
      * 取得缓存文件路径
      */
     private function getcacheid() {
         return $this->dir.CACHE_PREFIX.md5($this->geturl()).$this->ext;
     }
+
     /**
      * 检查目录是否存在或是否可创建
      */
@@ -103,6 +110,7 @@ class Cache {
         }
         return true;
     }
+
     /**
      * 取得当前页面完整url
      */
@@ -117,6 +125,7 @@ class Cache {
         }
         return $url;
     }
+
     /**
      * 输出错误信息
      */

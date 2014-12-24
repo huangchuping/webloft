@@ -28,7 +28,6 @@ class Controller implements ControllerUtil{
         $this->_controller = $controller;
         $this->_action     = $action;
         $this->_model      = $model;
-//        $this->model      = new $model;
         $this->_template   = new View($controller,$action);
 
         if (CACHE_ENABLE) {
