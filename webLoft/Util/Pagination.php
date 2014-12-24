@@ -5,10 +5,6 @@
  *
  * PHP分页类
  * @package Page
- * Example:
-       $myPage=new Pager(1300,intval($CurrentPage));
-       $pageStr= $myPage->GetPagerContent();
-       echo $pageStr;
  */
 
 class Pager{
