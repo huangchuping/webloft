@@ -28,7 +28,6 @@ class Cache {
      */
     private function isvalid() {
         if (!file_exists($this->cacheid)) return false;
-        $this->cacheid = str_replace('../runTime/cache/cache_','',$this->cacheid);
         if (!(@$mtime = filemtime($this->cacheid))) return false;
         if (mktime(time()) - $mtime > $this->lifetime) return false;
         return true;
@@ -39,7 +38,8 @@ class Cache {
      * $mode == 1 , 以直接赋值(通过$content参数接收)的方式取得页面内容
      * $mode == 2 , 以本地读取(fopen ile_get_contents)的方式取得页面内容(似乎这种方式没什么必要)
      */
-    public function write($mode=0,$content='') {
+    public function write($mode=0,$content) {
+//        echo $this->cacheid;
         switch ($mode) {
             case 0:
                 $content = ob_get_contents();
@@ -65,7 +65,7 @@ class Cache {
             echo "<span style='display:none;'>This is Cache.</span> ";
 
             require_once($this->cacheid);
-            //echo file_get_contents($this->cacheid);
+//            echo file_get_contents($this->cacheid);
             exit();
         }else {
 //            $this->clean();

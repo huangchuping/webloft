@@ -13,6 +13,7 @@ define('_DEFAULT_PATH_','/home/demo/viewAll');
 
 //设置是否为开发状态
 define('DEBUG',true);
+define('CACHE_ENABLE',true); //缓存目录
 session_start();
 
 //路径信息

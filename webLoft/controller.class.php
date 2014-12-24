@@ -11,7 +11,6 @@ class Controller implements ControllerUtil{
     protected $_controller;
     protected $_action;
     protected $_template;
-    protected $cacheEnAble = true;
     protected $cache = true;
 
     /**
@@ -32,10 +31,10 @@ class Controller implements ControllerUtil{
 //        $this->model      = new $model;
         $this->_template   = new View($controller,$action);
 
-//        if ($this->cacheEnAble) {
-//            $this->cache = new Cache(CACHE_DIR,10);
-//            $this->cache->load(); //装载缓存,缓存有效则不执行以下页面代码
-//        }
+        if (CACHE_ENABLE) {
+            $this->cache = new Cache(CACHE_DIR,10);
+            $this->cache->load(); //装载缓存,缓存有效则不执行以下页面代码
+        }
 
     }
 
