@@ -39,7 +39,6 @@ class Cache {
      * $mode == 2 , 以本地读取(fopen ile_get_contents)的方式取得页面内容(似乎这种方式没什么必要)
      */
     public function write($mode=0,$content) {
-//        echo $this->cacheid;
         switch ($mode) {
             case 0:
                 $content = ob_get_contents();
@@ -96,6 +95,7 @@ class Cache {
         if (is_dir($dir)) return true;
         try {
             mkdir($dir,0777);
+            $this->error('have no runtime/cache dir ! please make it');
         }
         catch (Exception $e) {
             $this->error('所设定缓存目录不存在并且创建失败!请检查目录权限!');
