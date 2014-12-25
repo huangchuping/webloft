@@ -11,7 +11,7 @@ class Controller implements ControllerUtil{
     protected $_controller;
     protected $_action;
     protected $_template;
-    protected $cache = true;
+    protected $_cache;
 
     /**
      * 构造方法

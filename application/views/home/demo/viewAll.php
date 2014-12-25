@@ -3,7 +3,7 @@
 <form action="/home/demo/add" method="post">
     <input type="text" value="add it..." onclick="this.value=''" name="name">
     <input type="text" value="input code..." onclick="this.value=''" name="code">
-    <img src="/home/demo/code" onclick="javascript:this.src='code?time='+Math.random();" />
+    <img src="/home/demo/code" onclick="javascript:this.src='/home/demo/code'" />
     <input type="submit" value="add">
 </form>
 <br/><br/>

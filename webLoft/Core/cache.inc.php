@@ -71,9 +71,26 @@ class Cache {
         }else {
 //            $this->clean();
             ob_start();
-            $this->write(2,'');
             return false;
         }
+    }
+
+
+    public function get(){
+        $filename = $this->cacheid;
+        if (!file_exists($filename) || !is_readable($filename)){//can't read the cache
+            return false;
+        }
+        if ( time() < (filemtime($filename) + $this->lifetime) ) {//cache for the key not expired
+            $file = fopen($filename, "r");// read data file
+            if ($file){//able to open the file
+                $data = fread($file, filesize($filename));
+                fclose($file);
+                return $data;//return the values
+            }
+            else return false;
+        }
+        else return false;//was expired you need to create new
     }
 
     /**

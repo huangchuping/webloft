@@ -23,13 +23,6 @@ class DemoController extends WebController {
 
     }
 
-    public function init(){
-        if (CACHE_ENABLE) {
-            $this->cache = new Cache(CACHE_DIR,10);
-            return $this->cache->load(); //装载缓存,缓存有效则不执行以下页面代码
-        }
-    }
-
     /**
      * 指定查看元素
      */
