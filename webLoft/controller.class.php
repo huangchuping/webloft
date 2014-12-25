@@ -19,21 +19,16 @@ class Controller implements ControllerUtil{
      * @param $controller
      * @param $action
      */
-    function __construct($model, $controller,$action) {
+    public function __construct($model, $controller,$action) {
 
         if(__URL__ == '/'){
             header('location:'._DEFAULT_PATH_);
         }
-        $this->loginCheck();
         $this->_controller = $controller;
         $this->_action     = $action;
         $this->_model      = $model;
         $this->_template   = new View($controller,$action);
-
-        if (CACHE_ENABLE) {
-            $this->cache = new Cache(CACHE_DIR,10);
-            $this->cache->load(); //装载缓存,缓存有效则不执行以下页面代码
-        }
+        $this->init();
 
     }
 

@@ -5,7 +5,7 @@
  * Date: 14-11-12
  */
 
-class DemoController extends Controller {
+class DemoController extends WebController {
 
     /**
      * 验证码调用方法
@@ -21,6 +21,13 @@ class DemoController extends Controller {
         );
         $code->create($length,$param);
 
+    }
+
+    public function init(){
+        if (CACHE_ENABLE) {
+            $this->cache = new Cache(CACHE_DIR,10);
+            return $this->cache->load(); //装载缓存,缓存有效则不执行以下页面代码
+        }
     }
 
     /**

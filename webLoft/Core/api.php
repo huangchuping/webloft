@@ -8,7 +8,14 @@
 class InputFiles{
 
     function __construct(){
-
+        $dirs = array('../runTime/cache/',
+            '../runTime/logs/',
+            '../runTime/sessions/'
+        );
+        foreach($dirs as $dir){
+            if (is_dir($dir)) break;
+            mkdir($dir,0777,true);
+        }
     }
 
     public function index($includePath){

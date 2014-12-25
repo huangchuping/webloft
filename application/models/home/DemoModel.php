@@ -5,7 +5,7 @@
  * Date: 14-11-12
  * Time: 下午3:45
  */
-class DemoModel extends Model {
+class DemoModel extends WebModel {
 
     /**
      * 保存信息

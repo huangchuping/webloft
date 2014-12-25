@@ -6,7 +6,7 @@
  * Time: 下午5:35
  */
 
-class IndexController extends Controller {
+class IndexController extends WebController {
     /**
      * 指定查看元素
      */

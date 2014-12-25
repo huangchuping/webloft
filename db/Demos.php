@@ -7,7 +7,7 @@
  */
 
 //类名必须以驼峰命名跟数据库表名一致
-class DemoInfos extends DB{
+class DemoInfos extends WebDb{
 
     //数据库所有字段映射（除ID）
     private $name = 'item_name';

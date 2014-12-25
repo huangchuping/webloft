@@ -44,12 +44,12 @@ class Cache {
     public function write($mode=0,$content) {
         switch ($mode) {
             case 0:
-                $content = ob_get_contents();
+                $content = @ob_get_contents();
                 break;
             default:
                 break;
         }
-        ob_end_flush();
+        @ob_end_flush();
         try {
             file_put_contents($this->cacheid,$content);
         }
@@ -66,13 +66,13 @@ class Cache {
     public function load() {
         if ($this->isvalid()) {
             echo "<span style='display:none;'>This is Cache.</span> ";
-
-            require_once($this->cacheid);
-//            echo file_get_contents($this->cacheid);
-            exit();
+            return  file_get_contents($this->cacheid);
+//            exit();
         }else {
 //            $this->clean();
             ob_start();
+            $this->write(2,'');
+            return false;
         }
     }
 
@@ -101,8 +101,7 @@ class Cache {
     private function dir_isvalid($dir) {
         if (is_dir($dir)) return true;
         try {
-            mkdir($dir,0777);
-            $this->error('have no runtime/cache dir ! please make it');
+            mkdir($dir,0777,true);
         }
         catch (Exception $e) {
             $this->error('所设定缓存目录不存在并且创建失败!请检查目录权限!');
