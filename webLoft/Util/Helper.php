@@ -20,7 +20,7 @@ class Helper{
         $filename = $dir.$filename.'.php';
         $fd = fopen($filename,"a");
         //增加文件
-        $str = "<?php echo 'time:".date("Y-m-d h:i:s",time())." --------{".$content."}'; ?>";
+        $str = "<?PHP exit;?> \"time:".date("Y-m-d h:i:s",time())." --------{".$content."}\"";
         //写入字符串
         fwrite($fd, $str."\n");
         //关闭文件

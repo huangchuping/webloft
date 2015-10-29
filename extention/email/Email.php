@@ -3,7 +3,7 @@
 /**
  * 邮件发送类
  */
-class Mail
+class Email
 {
     // SMTP服务器名称
     private $SmtpHost;
@@ -24,7 +24,7 @@ class Mail
      */
     private $HostName = 'localhost';
     /* 开启调试模式 */
-    private $Debug = false;
+    private $Debug = true;
     /* 是否进行身份验证 */
     private $Authentication = false;
     /* Private Variables */
@@ -235,6 +235,8 @@ class Mail
     {
         if ($this->Debug) {
             echo $message . "<br />";
+        }else{
+            Helper::setLogs($message ,'error_email');
         }
     }
 
@@ -309,25 +311,5 @@ class Mail
 
 //test
 
-//邮件配置
-$title = '考勤数据脚本运行情况抽取';
-$sm = new Mail('mail.7sef.com', 'itadmin', 'abc,.123');
-$sendTo = "huangcp@7sef.com,duhz@7sef.com,yinhl@7sef.com,zhangtt@7sef.com,luoy@7sef.com,zhanghy@7sef.com";
-if ($result['status']) {
-    $content = "<table style='background-color: #CCCCCC;' cellspacing='1' cellpadding='3'  width='99%' >";
-    $content .= "<tr height='30'><td bgcolor='#FFFFFF'>信息类型：</td> <td bgcolor='#FFFFFF'> <strong style='color:#F00; size:14px;' >职能部门员工" . date("Y 年 m 月", strtotime("-1 month")) . "考勤数据抽取</strong></td>";
-    $content .= "<tr height='30' ><td width='10%' bgcolor='#FFFFFF'>考勤系统数据：</td><td width='40%' bgcolor='#FFFFFF'>成功写入hr_attendance_sum表:" . $totalSum[0]['total'] . "条数据</td>";
-    $content .= "<tr height='30' ><td width='10%' bgcolor='#FFFFFF'>考勤明细数据：</td><td width='40%' bgcolor='#FFFFFF'>成功写入hr_attendence_check表:" . $totalCheck[0]['total'] . "条数据</td></tr></table>";
-} else {
-    if ($result['message'] == '写入hr_attendance_sum出错了') {
-        $content = "<table style='background-color: #CCCCCC;' cellspacing='1' cellpadding='3'  width='99%' >";
-        $content .= "<tr height='30'><td bgcolor='#FFFFFF'>信息类型：</td> <td bgcolor='#FFFFFF'> <strong style='color:#F00; size:14px;' >职能部门员工" . date("Y 年 m 月", strtotime("-1 month")) . "考勤数据抽取</strong></td>";
-        $content .= "<tr height='30' ><td width='10%' bgcolor='#FFFFFF'>信息反馈：</td><td width='40%' bgcolor='#FFFFFF'>写入hr_attendence_check表失败</td></tr></table>";
-    } elseif ($result['message'] == '该月数据已经保存过了') {
-        $content = "<table style='background-color: #CCCCCC;' cellspacing='1' cellpadding='3'  width='99%' >";
-        $content .= "<tr height='30'><td bgcolor='#FFFFFF'>信息类型：</td> <td bgcolor='#FFFFFF'> <strong style='color:#F00; size:14px;' >职能部门员工" . date("Y 年 m 月", strtotime("-1 month")) . "考勤数据抽取</strong></td>";
-        $content .= "<tr height='30' ><td width='10%' bgcolor='#FFFFFF'>信息反馈：</td><td width='40%' bgcolor='#FFFFFF'>该月数据已经保存过了</td></tr></table>";
-    }
-}
-//	$end = $sm->SendMail($sendTo,'itadmin@7sef.com',$title,$content);
+
 
