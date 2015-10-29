@@ -1,6 +1,6 @@
 <?php
 /**
- * 错误处理类，自己处理所有的PHP错误
+ * 閿欒澶勭悊绫伙紝鑷繁澶勭悊鎵�鏈夌殑PHP閿欒
  */
 error_reporting ( 0 );
 
@@ -30,7 +30,7 @@ function errorHandler($errno, $errstr, $errfile, $errline, $errcontext = '') {
             return;
     }
 
-    // 输出JSON格式错误
+    // 杈撳嚭JSON鏍煎紡閿欒
     $result = array(
         'code' => 1,
         'message' => sprintf( "%s:  %s in %s on line %d", $errors, $errstr, $errfile, $errline )

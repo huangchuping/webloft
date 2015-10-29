@@ -1,6 +1,6 @@
 <?php
 /**
- * ¹¤¾ßÀà
+ * å·¥å…·ç±»
  * Created by WEBLOFT.
  * @author huangChuPing
  */
@@ -16,21 +16,21 @@ class Helper{
     public static function setLogs($content,$filename,$type=false){
         $dir = '../runTime/logs/'.date('Y-m-d').'/';
         if(!file_exists($dir)) mkdir($dir,0777,true);
-        //´ò¿ªÎÄ¼ş
+        //æ‰“å¼€æ–‡ä»¶
         $filename = $dir.$filename.'.php';
         $fd = fopen($filename,"a");
-        //Ôö¼ÓÎÄ¼ş
+        //å¢åŠ æ–‡ä»¶
         $str = "<?PHP exit;?> \"time:".date("Y-m-d h:i:s",time())." --------{".$content."}\"";
-        //Ğ´Èë×Ö·û´®
+        //å†™å…¥å­—ç¬¦ä¸²
         fwrite($fd, $str."\n");
-        //¹Ø±ÕÎÄ¼ş
+        //å…³é—­æ–‡ä»¶
         fclose($fd);
     }
 
 
     /**
-     * ¹ıÂË²ÎÊı(ĞèÒª¸üºÃµÄ·½Ê½)
-     * $p=*, ±íÊ¾¹ıÂËËùÓĞÎª¿ÕµÄ$pararms,
+     * è¿‡æ»¤å‚æ•°(éœ€è¦æ›´å¥½çš„æ–¹å¼)
+     * $p=*, è¡¨ç¤ºè¿‡æ»¤æ‰€æœ‰ä¸ºç©ºçš„$pararms,
      */
     public static function filterParams( $p=null ) {
         //$pararms = $_REQUEST;
@@ -52,7 +52,7 @@ class Helper{
             $oldvalue = $newvalue = $value;
             $value = trim($value);
             if(!is_array($newvalue)) {
-                //Ìí¼ÓÁË¹ıÂËÌõ¼ş by huangChuPing
+                //æ·»åŠ äº†è¿‡æ»¤æ¡ä»¶ by huangChuPing
                 $newvalue = preg_replace('/(select|delete|update|insert|from|iframe|replace|group|drop|src|href|sleep|\'|,|"|and|exec|count|%|chr|mid|master|truncate|char|declare){1}[\s\(]+/i','',$value);
                 $newvalue = str_replace(array('iframe','<script>','<>','VBScript','src','href','SRC','HREF'), array(), $newvalue);
             }
