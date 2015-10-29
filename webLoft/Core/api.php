@@ -1,16 +1,17 @@
 <?php
 /**
- * 项目文件引入
+ * 项目文件引入&接口化入口
  * Created by WEBLOFT
- * User:huangcp
+ * @author:huangChuPing
  */
 
 class InputFiles{
 
     function __construct(){
         $dirs = array('../runTime/cache/',
-            '../runTime/logs/',
-            '../runTime/sessions/'
+            '../runTime/logs/'
+//        ,
+//            '../runTime/sessions/'
         );
         foreach($dirs as $dir){
             if (is_dir($dir)) break;

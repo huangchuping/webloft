@@ -2,7 +2,7 @@
 /**
  * 数据库查询基类
  * Created by WEBLOFT.
- * User: huangcp
+ * @author huangChuPing
  */
 
 class DB implements DbUtil{
