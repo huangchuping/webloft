@@ -1,8 +1,11 @@
 <?php
 /**
- * 数据库查询基类
- * Created by WEBLOFT.
- * @author huangChuPing
+ * @package: 数据库查询基类
+ * @org: WEBLOFT
+ * @author: huangcp
+ * @email: hcp0224@163.com
+ * @created: 2015-11-04
+ * @logs:
  */
 
 class DB implements DbUtil{
@@ -19,6 +22,8 @@ class DB implements DbUtil{
 
     /**
      * 连接数据库
+     * @author: huangcp
+     * @logs:
      */
     public function __construct() {
         $this->_dbHandle = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASSWORD);
@@ -31,6 +36,11 @@ class DB implements DbUtil{
 
     /**
      * 查询指定数据表的所有内容
+     * @param $condition
+     * @param null $options
+     * @return array|PDOStatement
+     * @author: huangcp
+     * @logs:
      */
     public function select($condition,$options = null) {
         if(!isset($options)){
@@ -60,6 +70,8 @@ class DB implements DbUtil{
      * 根据条件删除数据
      * @param $con
      * @return int
+     * @author: huangcp
+     * @logs:
      */
     public function deleteByCondition($con){
         $query = 'delete from `'.$this->_table.'` ';
@@ -79,6 +91,8 @@ class DB implements DbUtil{
      * @param $change
      * @param $con
      * @return int
+     * @author: huangcp
+     * @logs:
      */
     public function updateByCondition($change,$con){
         if(!empty($con)){
@@ -95,12 +109,15 @@ class DB implements DbUtil{
             $res = $this->_dbHandle->exec($sql);
             return $res;
         }
+        return null;
     }
 
     /**
      * 写入数据操作
      * @param $val
      * @return array
+     * @author: huangcp
+     * @logs:
      */
     public function insert($val){
         $this->_dbHandle->beginTransaction();

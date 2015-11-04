@@ -1,8 +1,11 @@
 <?php
 /**
- * 控制器基类
- * Created by hcp
- * User:huangcp
+ * @package: 控制器基类
+ * @org: WEBLOFT
+ * @author: huangcp
+ * @email: hcp0224@163.com
+ * @created: 2015-11-04
+ * @logs:
  */
 
 class Controller implements ControllerUtil{
@@ -18,6 +21,8 @@ class Controller implements ControllerUtil{
      * @param $model
      * @param $controller
      * @param $action
+     * @author: huangcp
+     * @logs:
      */
     public function __construct($model, $controller,$action) {
 
@@ -36,6 +41,9 @@ class Controller implements ControllerUtil{
 
     /**
      * 全局登录校验
+     * @param null $type
+     * @author: huangcp
+     * @logs:
      */
     public function loginCheck($type = null) {
 
@@ -45,6 +53,8 @@ class Controller implements ControllerUtil{
      * 渲染页面及设定渲染值
      * @param $name
      * @param $value
+     * @author: huangcp
+     * @logs:
      */
     public function sign($name,$value) {
         $this->_template->setSign($name,$value);
@@ -52,6 +62,9 @@ class Controller implements ControllerUtil{
 
     /**
      * 页面渲染方法
+     * @param null $url
+     * @author: huangcp
+     * @logs:
      */
     public function render($url = null) {
         if(empty($url)){
@@ -67,6 +80,8 @@ class Controller implements ControllerUtil{
      * 获取GET参数
      * @param $type
      * @return array
+     * @author: huangcp
+     * @logs:
      */
     public function GET($type){
         $geter = array();
@@ -91,6 +106,8 @@ class Controller implements ControllerUtil{
      * 获取POST参数
      * @param $type
      * @return mixed
+     * @author: huangcp
+     * @logs:
      */
     public function POST($type = null){
         if($type == ''){

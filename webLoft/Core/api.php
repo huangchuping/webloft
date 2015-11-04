@@ -1,8 +1,11 @@
 <?php
 /**
- * 项目文件引入&接口化入口
- * Created by WEBLOFT
- * @author:huangChuPing
+ * package: 项目文件引入&接口化入口
+ * @org: WEBLOFT
+ * @author: huangcp
+ * @email: hcp0224@163.com
+ * @created: 2015-11-04
+ * @logs:
  */
 
 class InputFiles{
@@ -10,8 +13,6 @@ class InputFiles{
     function __construct(){
         $dirs = array('../runTime/cache/',
             '../runTime/logs/'
-//        ,
-//            '../runTime/sessions/'
         );
         foreach($dirs as $dir){
             if (is_dir($dir)) break;

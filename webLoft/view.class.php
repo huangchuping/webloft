@@ -1,8 +1,11 @@
 <?php
 /**
- * 视图层基类
- * Created by hcp
- * User:huangcp
+ * package: 视图层基类
+ * @org: WEBLOFT
+ * @author: huangcp
+ * @email: hcp0224@163.com
+ * @created: 2015-11-04
+ * @logs:
  */
 
 class View {
@@ -17,6 +20,10 @@ class View {
 
     /**
      * 设置变量
+     * @param $name
+     * @param $value
+     * @author: huangcp
+     * @logs:
      */
     public function setSign($name,$value) {
         $this->variables[$name] = $value;
@@ -24,6 +31,9 @@ class View {
 
     /**
      * 显示模板
+     * @param null $arr
+     * @author: huangcp
+     * @logs:
      */
     public function render($arr = null) {
         if(empty($arr)){
