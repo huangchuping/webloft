@@ -1,8 +1,12 @@
 <?php
+
 /**
- * 路径组装
- * Created by WEBLOFT
- * User:huangcp
+ * @package: 路径组装
+ * @org: WEBLOFT
+ * @author: huangcp
+ * @email: hcp0224@163.com
+ * @created: 2015-11-04
+ * @logs:
  */
 
 class App{
@@ -15,6 +19,8 @@ class App{
 
     /**
      * 检查是否为开发环境并设置是否记录错误日志
+     * @author: huangcp
+     * @logs:
      */
     private function setReporting(){
         if (DEBUG == true) {
@@ -30,6 +36,10 @@ class App{
 
     /**
      * 检测敏感字符转义（Magic Quotes）并移除他们
+     * @param: $value
+     * @author: huangcp
+     * @logs:
+     * @return array|$value
      */
     private function stripSlashDeep($value){
         $value = is_array($value) ? array_map('stripSlashDeep',$value) : stripslashes($value);
@@ -38,6 +48,8 @@ class App{
 
     /**
      * 判断是否是请求参数
+     * @author: huangcp
+     * @logs:
      */
     private function removeMagicQuotes(){
         if (get_magic_quotes_gpc()) {
@@ -49,6 +61,8 @@ class App{
 
     /**
      * 检测全局变量设置（register globals）并移除他们
+     * @author: huangcp
+     * @logs:
      */
     private function unregisterGlobals(){
         if (ini_get('register_globals')) {
@@ -65,6 +79,8 @@ class App{
 
     /**
      * 主请求方法，主要目的拆分URL请求
+     * @author: huangcp
+     * @logs:
      */
     public function run() {
         if(__URL__ == '/'){
@@ -93,7 +109,12 @@ class App{
 
 }
 
-/* 自动加载控制器和模型 */
+/**
+ * 自动加载控制器和模型
+ * @param: $className
+ * @author: huangcp
+ * @logs:
+ */
 function __autoload($className) {
     $urlArray = explode("/",__URL__);
     if(empty($urlArray[1])){

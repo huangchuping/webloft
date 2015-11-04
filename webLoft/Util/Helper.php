@@ -1,8 +1,11 @@
 <?php
 /**
- * 工具类
- * Created by WEBLOFT.
- * @author huangChuPing
+ * @package: 工具类
+ * @org: WEBLOFT
+ * @author: huangcp
+ * @email: hcp0224@163.com
+ * @created: 2015-11-04
+ * @logs:
  */
 
 class Helper{
@@ -13,6 +16,14 @@ class Helper{
     }
 
 
+    /**
+     * 写入日志
+     * @param $content
+     * @param $filename
+     * @param bool|false $type
+     * @author: huangcp
+     * @logs:
+     */
     public static function setLogs($content,$filename,$type=false){
         $dir = '../runTime/logs/'.date('Y-m-d').'/';
         if(!file_exists($dir)) mkdir($dir,0777,true);
@@ -30,7 +41,10 @@ class Helper{
 
     /**
      * 过滤参数(需要更好的方式)
-     * $p=*, 表示过滤所有为空的$pararms,
+     * @param null $p=*, 表示过滤所有为空的$pararms
+     * @return array
+     * @author: huangcp
+     * @logs:
      */
     public static function filterParams( $p=null ) {
         //$pararms = $_REQUEST;

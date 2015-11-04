@@ -1,6 +1,11 @@
 <?php
 /**
- * 错误处理类，自己处理所有的PHP错误
+ * @package: 错误处理类，自己处理所有的PHP错误
+ * @org: WEBLOFT
+ * @author: huangcp
+ * @email: hcp0224@163.com
+ * @created: 2015-11-04
+ * @logs:
  */
 error_reporting ( 0 );
 

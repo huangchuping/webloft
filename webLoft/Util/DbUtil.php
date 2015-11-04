@@ -1,8 +1,11 @@
 <?php
 /**
- * 数据库查询基类接口类
- * Created by WEBLOFT.
- * User: huangcp
+ * @package: 数据库查询基类接口类
+ * @org: WEBLOFT
+ * @author: huangcp
+ * @email: hcp0224@163.com
+ * @created: 2015-11-04
+ * @logs:
  */
 
 interface DbUtil {

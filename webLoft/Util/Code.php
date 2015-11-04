@@ -1,8 +1,11 @@
 <?php
 /**
- * 验证码类
- * Created by WEBLOFT.
- * User: huangcp
+ * @package: 验证码类
+ * @org: WEBLOFT
+ * @author: huangcp
+ * @email: hcp0224@163.com
+ * @created: 2015-11-04
+ * @logs:
  */
 
 class Captcha{
@@ -90,10 +93,11 @@ class Captcha{
         }
     }
 
-    /* 产生随机数函数
-    * @param int $length 需要随机生成的字符串數
-    * @return String
-    */
+    /**
+     * 产生随机数函数
+     * @param int $length 需要随机生成的字符串數
+     * @return String
+     */
     private function random($length){
         $hash  = '';
         $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -104,7 +108,8 @@ class Captcha{
         return $hash;
     }
 
-    /** 验证码session处理方法
+    /**
+     * 验证码session处理方法
      * @param String $name captcha session name
      * @param String $value
      * @return String

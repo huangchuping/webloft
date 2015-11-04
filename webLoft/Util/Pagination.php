@@ -1,10 +1,11 @@
 <?php
 /**
- * Created by WEBLOFT.
- * User: Huangcp
- *
- * PHP分页类
- * @package Page
+ * @package: PHP分页类
+ * @org: WEBLOFT
+ * @author: huangcp
+ * @email: hcp0224@163.com
+ * @created: 2015-11-04
+ * @logs:
  */
 
 class Pager{
@@ -30,8 +31,9 @@ class Pager{
 
     /**
      * 获取去除page部分的当前URL字符串
-     *
      * @return String URL字符串
+     * @author: huangcp
+     * @logs:
      */
     private function _getPageUrl(){
         if(strpos(__URL__,'/page/')){
@@ -45,6 +47,8 @@ class Pager{
     /**
      * 设置页面参数合法性
      * @return void
+     * @author: huangcp
+     * @logs:
      */
     private function _initPagerLegal(){
         if ((!is_numeric($this->pageIndex)) || $this->pageIndex < 1) {
@@ -57,6 +61,8 @@ class Pager{
     /**
      * 获取分页样式及信息
      * @return string
+     * @author: huangcp
+     * @logs:
      */
     public function GetPagerContent(){
         $str = "<div class=\"Pagination\">";
@@ -159,6 +165,8 @@ class Pager{
     /**
      * 显示分页类容
      * @return mixed
+     * @author: huangcp
+     * @logs:
      */
     public function getPageInfo(){
         $pages = (intval($this->pageIndex)-1) * intval($this->pageSize);
