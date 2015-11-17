@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by WEBLOFT.
- * User: Administrator
+ * @author: hcp
  * Date: 14-11-12
  */
 
