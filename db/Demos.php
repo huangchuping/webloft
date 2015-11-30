@@ -3,10 +3,10 @@
  * DEMO
  * User: WEBLOFTER
  * 框架DB层
- * 主要处理数据库CURD操作
+ * 处理数据库CURD操作
+ * 类名必须以驼峰命名跟数据库表名一致
  */
 
-//类名必须以驼峰命名跟数据库表名一致
 class DemoInfos extends WebDb{
 
     //数据库所有字段映射（除ID）
