@@ -1,3 +1,3 @@
 # webloft
-framework
+WEBLOFT FRAMEWORK is
 a simple framework
