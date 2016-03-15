@@ -1,6 +1,6 @@
 <?php
 require_once dirname(dirname(dirname( __FILE__ ))).'/config/api.php';
-require_once '../Lib/Util.php';
+require_once dirname(dirname(dirname( __FILE__ ))).'/webloft/Lib/Util.php';
 
 class Client {
 

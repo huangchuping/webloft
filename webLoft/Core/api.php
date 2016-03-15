@@ -24,17 +24,17 @@ class InputFiles{
         foreach($includePath as $path){
             $this->get_files_scandir($path);
         }
-        //邮件配置
-        $title = '据脚本运行情况';
-        $sm = new Email('smtp.163.com', 'hcp0224@163.com', 'xuanshao..',true);
-        $sendTo = "hcp0224@qq.com,1194886447@qq.com";
-        $content = "<table style='background-color: #CCCCCC;' cellspacing='1' cellpadding='3'  width='99%' >";
-        $content .= "<tr height='30'><td bgcolor='#FFFFFF'>信息类型：</td> <td bgcolor='#FFFFFF'> <strong style='color:#F00; size:14px;' >职能部门员工" . date("Y 年 m 月", strtotime("-1 month")) . "考勤数据抽取</strong></td>";
-        $content .= "<tr height='30' ><td width='10%' bgcolor='#FFFFFF'>信息反馈：</td><td width='40%' bgcolor='#FFFFFF'>该月数据已经保存过了</td></tr></table>";
-
-        $end = $sm->SendMail($sendTo,'hcp0224',$title,$content);
-        echo 123,'-----';
-        echo var_dump($end);exit;
+//        //邮件配置
+//        $title = '据脚本运行情况';
+//        $sm = new Email('smtp.163.com', 'hcp0224@163.com', 'xuanshao..',true);
+//        $sendTo = "hcp0224@qq.com,1194886447@qq.com";
+//        $content = "<table style='background-color: #CCCCCC;' cellspacing='1' cellpadding='3'  width='99%' >";
+//        $content .= "<tr height='30'><td bgcolor='#FFFFFF'>信息类型：</td> <td bgcolor='#FFFFFF'> <strong style='color:#F00; size:14px;' >职能部门员工" . date("Y 年 m 月", strtotime("-1 month")) . "考勤数据抽取</strong></td>";
+//        $content .= "<tr height='30' ><td width='10%' bgcolor='#FFFFFF'>信息反馈：</td><td width='40%' bgcolor='#FFFFFF'>该月数据已经保存过了</td></tr></table>";
+//
+//        $end = $sm->SendMail($sendTo,'hcp0224',$title,$content);
+//        echo 123,'-----';
+//        echo var_dump($end);exit;
     }
 
     private function get_files_scandir($path){

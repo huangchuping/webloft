@@ -115,6 +115,24 @@ class App{
  * @author: huangcp
  * @logs:
  */
+//function __autoload($className) {
+//    $urlArray = explode("/",__URL__);
+//    if(empty($urlArray[1])){
+//        $urlArray = explode('/', _DEFAULT_PATH_);
+//    }
+//    if (file_exists(ROOT . DS . 'webLoft' . DS . strtolower($className) . '.class.php')) {//加载控制器基类
+//        require_once(ROOT . DS . 'webLoft' . DS . strtolower($className) . '.class.php');
+//    } else if (file_exists(ROOT . DS . 'application' . DS . 'controllers' . DS .$urlArray[1].DS. strtolower($className) . '.php')) {//加载控制器
+//        require_once(ROOT . DS . 'application' . DS . 'controllers' . DS.$urlArray[1].DS . strtolower($className) . '.php');
+//    } else if (file_exists(ROOT . DS . 'application' . DS . 'models' . DS .$urlArray[1].DS . strtolower($className) . '.php')) {//加载model层
+//        require_once(ROOT . DS . 'application' . DS . 'models' . DS .$urlArray[1].DS . strtolower($className) . '.php');
+//    } else if(file_exists(ROOT . DS . 'db' .DS . substr($className,0,-5) . 's.php')){//加载db层
+//        require_once(ROOT . DS . 'db' .DS . substr($className,0,-5) . 's.php');
+//    }else {
+//        /* 生成错误代码 */
+//        echo ' 规则写错了';
+//    }
+//}
 function __autoload($className) {
     $urlArray = explode("/",__URL__);
     if(empty($urlArray[1])){
@@ -122,10 +140,10 @@ function __autoload($className) {
     }
     if (file_exists(ROOT . DS . 'webLoft' . DS . strtolower($className) . '.class.php')) {//加载控制器基类
         require_once(ROOT . DS . 'webLoft' . DS . strtolower($className) . '.class.php');
-    } else if (file_exists(ROOT . DS . 'application' . DS . 'controllers' . DS .$urlArray[1].DS. strtolower($className) . '.php')) {//加载控制器
-        require_once(ROOT . DS . 'application' . DS . 'controllers' . DS.$urlArray[1].DS . strtolower($className) . '.php');
-    } else if (file_exists(ROOT . DS . 'application' . DS . 'models' . DS .$urlArray[1].DS . strtolower($className) . '.php')) {//加载model层
-        require_once(ROOT . DS . 'application' . DS . 'models' . DS .$urlArray[1].DS . strtolower($className) . '.php');
+    } else if (file_exists(ROOT . DS . 'module' . DS .$urlArray[1].DS. strtolower($className) . '.php')) {//加载控制器
+        require_once(ROOT . DS . 'module'. DS.$urlArray[1].DS . strtolower($className) . '.php');
+    } else if (file_exists(ROOT . DS . 'module' . DS .$urlArray[1].DS . strtolower($className) . '.php')) {//加载model层
+        require_once(ROOT . DS . 'module' . DS .$urlArray[1].DS . strtolower($className) . '.php');
     } else if(file_exists(ROOT . DS . 'db' .DS . substr($className,0,-5) . 's.php')){//加载db层
         require_once(ROOT . DS . 'db' .DS . substr($className,0,-5) . 's.php');
     }else {
