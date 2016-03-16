@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta property="wb:webmaster" content="e67a1254b8a3a835" />
+<meta property="qc:admins" content="170322401567547655206375" />
+<meta name="baidu-site-verification" content="smOVKT6IrV" />
+
+<!--<meta name="keywords" content="微爱,welove,情侣,甜蜜,应用,爱情,iPhone,苹果,Android,安卓,纪念日,异地恋,我们的家,游戏,情侣游戏,爱情树 ,我们的家,装饰,家具,时装"/>-->
+<!--<meta name="description" content="微爱，你我之间,无“微”不至的“爱”。微爱是一款专为情侣设计的甜蜜应用。用微爱和爱人一对一私密聊天，发图片，发位置，让对方知道你的心情状态，还能记录重要纪念日，如甜蜜的第一次旅行和你俩的生日。"/>-->
+<!--<link rel="shortcup icon" href="static/images/icon.ico"/>-->
+<link rel="stylesheet" href="<?php echo __CSS__; ?>love/welove-v3.css" type="text/css" media="screen" />
+
+<!-- 音乐控件 -->
+<link rel="stylesheet" href="<?php echo __CSS__; ?>love/reset.css">
+<link rel="stylesheet" href="<?php echo __CSS__; ?>love/style.css" media="screen" type="text/css" />
+<script src="<?php echo __JS__; ?>love/jquery.js"></script>
+<title></title>
+</head>
+
+
+<body>
+<!--效果html开始-->
+  <div class="music-player">
+  <div style="background-image: url(static/images/yqB0erk.jpg);" class="album"></div>
+  <div class="info">
+    <div class="left">
+      <a href="javascript:;" class="icon-shuffle"></a>
+      <a href="javascript:;" class="icon-heart"></a>
+    </div>
+    <div class="center">
+    <div class="jp-playlist">
+      <ul>
+        <li></li>
+      </ul>
+    </div>
+    </div>
+    <div class="right">
+      <a href="javascript:;" class="icon-repeat"></a>
+      <a href="javascript:;" class="icon-share"></a>
+    </div>
+
+    <div class="progress jp-seek-bar">
+      <span class="jp-play-bar" style="width: 0%"></span>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="current jp-current-time">00:00</div>
+    <div class="play-controls">
+      <a href="javascript:;" class="icon-previous jp-previous" title="previous"></a>
+      <a href="javascript:;" class="icon-play jp-play" title="play"></a>
+      <a href="javascript:;" class="icon-pause jp-pause" title="pause"></a>
+      <a href="javascript:;" class="icon-next jp-next" title="next"></a>
+    </div>
+    <div class="volume-level jp-volume-bar">
+      <span class="jp-volume-bar-value" style="width: 0%"></span>
+      <a href="javascript:;" class="icon-volume-up jp-volume-max" title="max volume"></a>
+      <a href="javascript:;" class="icon-volume-down jp-mute" title="mute"></a>
+    </div>
+  </div>
+  <div id="jquery_jplayer" class="jp-jplayer"></div>
+</div>
+  <script src="<?php echo __JS__; ?>love/jquery-1.8.3.min.js"></script>
+  <script src='<?php echo __JS__; ?>love/jquery.jplayer.min.js'></script>
+  <script src='<?php echo __JS__; ?>love/jplayer.playlist.min.js'></script>
+  <script src="<?php echo __JS__; ?>love/index.js"></script>
+<!--效果html结束-->
+
+
+	<div id="slide">
+		<div class="frame">
+			<div id="preview">
+				<div class="frame">
+					<div class="slide slide-1 slide-on"><img src="<?php echo __IMG__; ?>love/home/slide-11.png" /></div>
+					<div class="slide slide-2"><img src="<?php echo __IMG__; ?>love/home/slide-12.png" /></div>
+					<div class="slide slide-3"><img src="<?php echo __IMG__; ?>love/home/slide-13.png" /></div>
+					<div class="slide slide-4"><img src="<?php echo __IMG__; ?>love/home/slide-14.png" /></div>
+					<div class="slide slide-5"><img src="<?php echo __IMG__; ?>love/home/slide-15.png" /></div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div id="feature" class="frame">
+		<div id="feature-game">
+			<div class="feature-info">
+				<h3>好玩温馨的情侣游戏</h3>
+				<p>我们的家：<br />情侣们可以装扮自己卡通形象和布置温馨小家</p>
+				<p>爱情树：和另一半一起种下见证你们爱情的小树苗</p>
+			</div>
+			<div class="feature-thumb">
+				<div class="thumb-1"><img src="<?php echo __IMG__; ?>love/home/thumb-21.png" /></div>
+				<div class="thumb-2"><img src="<?php echo __IMG__; ?>love/home/thumb-22.png" /></div>
+				<div class="slider"></div>
+				<div class="icon-1"><img src="<?php echo __IMG__; ?>love/home/icon-1.png" /></div>
+			</div>
+		</div>
+		<div id="feature-chat">
+			<div class="feature-info">
+				<h3>和另一半私密聊天</h3>
+				<p>欢乐神秘的变音功能</p>
+				<p>萌爆了的情侣表情</p>
+			</div>
+			<div class="feature-thumb">
+				<div class="thumb-3"><img src="<?php echo __IMG__; ?>love/home/thumb-23.png" /></div>
+				<div class="thumb-4"><img src="<?php echo __IMG__; ?>love/home/thumb-24.png" /></div>
+				<div class="slider"></div>
+				<div class="icon-2"><img src="<?php echo __IMG__; ?>love/home/icon-2.png" /></div>
+			</div>
+		</div>
+		<div id="feature-record">
+			<div class="feature-info">
+				<h3>记录你们的爱情</h3>
+				<p>用照片记下爱的时光只属于情侣的纪念日</p>
+			</div>
+			<div class="feature-thumb">
+				<div class="thumb-5"><img src="<?php echo __IMG__; ?>love/home/thumb-25.png" /></div>
+				<div class="thumb-6"><img src="<?php echo __IMG__; ?>love/home/thumb-26.png" /></div>
+				<div class="slider"></div>
+				<div class="icon-3"><img src="<?php echo __IMG__; ?>love/home/icon-3.png" /></div>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+var animate = [false, false, false];
+$(function($){
+	$(window).scroll(function(){
+		var st = $(document).scrollTop();
+		if (st > 200 && !animate[0]) {
+			animate[0] = true;
+			$('.thumb-1').addClass('thumb-1-on');
+			$('.thumb-2').addClass('thumb-2-on');
+			$('.icon-1').addClass('icon-1-on');
+		}
+		if (st > 800 && !animate[1]) {
+			animate[1] = true;
+			$('.thumb-3').addClass('thumb-3-on');
+			$('.thumb-4').addClass('thumb-4-on');
+			$('.icon-2').addClass('icon-2-on');
+		}
+		if (st > 1300 && !animate[2]) {
+			animate[2] = true;
+			$('.thumb-5').addClass('thumb-5-on');
+			$('.thumb-6').addClass('thumb-6-on');
+			$('.icon-3').addClass('icon-3-on');
+		}
+	})
+
+	var slideIndex = 2;
+	function slideNext() {
+		$('.slide').removeClass('slide-on');
+		$('.slide-' + slideIndex).addClass('slide-on');
+		slideIndex += 1;
+		if (slideIndex > 5) {
+			slideIndex = 1;
+		}
+	}
+
+	setInterval(slideNext, 5000)
+})
+</script>
+</body>
+</html>

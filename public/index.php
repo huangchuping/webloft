@@ -9,7 +9,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 header("Content-type: text/html; charset=utf-8");
 
 //设置初始化路径 由用户手动修改/添加
-define('_DEFAULT_PATH_','/admin/index/index');
+define('_DEFAULT_PATH_','/love/index/index');
 
 //设置是否为开发状态
 define('DEBUG',true);
